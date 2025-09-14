@@ -17,14 +17,14 @@ public class Bike {
         return gear;
     }
 
-    public void setGear(int newGear) {
-        if (isOn && newGear >= 0 && newGear < 5) {
-            gear = newGear;
+    public void setGear() {
+        if (isOn && gear == 0) {
+            gear++;
         }
     }
 
     public void setAccelerate() {
-        if (isOn && gear > 0) {
+        if (isOn && (gear > 0) && ((acceleration + gear) <= 123)) {
             acceleration += gear;
             if (acceleration > 20 && gear == 1)gear++;
             else if (acceleration > 30 && gear == 2)gear++;
